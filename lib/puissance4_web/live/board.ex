@@ -27,11 +27,6 @@ defmodule Puissance4Web.Board do
     socket = assign(socket, :win, win)
     {:noreply, socket}
 
-    if win do
-      {:noreply, push_event(socket, "gameover", %{win: win})}
-    else
-      {:noreply, socket}
-    end
   end
 
   def handle_info(
