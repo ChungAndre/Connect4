@@ -1,4 +1,4 @@
-import confetti from "canvas-confetti"
+
 
 // Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
 import "phoenix_html"
@@ -19,31 +19,3 @@ window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
 liveSocket.connect()
 
 window.liveSocket = liveSocket
-
-window.addEventListener("phx:gameover", (e) => {
-    shootConfetti();
-  });
-
-const shootConfetti = () => {
-    const colors = ["#E9826C", "#65CB61", "#6191CB"];
-  
-    confetti({
-      particleCount: 300,
-      angle: 70,
-      spread: 80,
-      startVelocity: 45,
-      gravity: 0.5,
-      origin: { x: 0, y: 0.4 },
-      colors
-    });
-  
-    confetti({
-      particleCount: 300,
-      angle: 130,
-      spread: 80,
-      startVelocity: 45,
-      gravity: 0.5,
-      origin: { x: 1, y: 0.4 },
-      colors
-    });
-  };
