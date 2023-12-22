@@ -79,7 +79,6 @@ defmodule Puissance4Web.Board do
 
     updated_grid =
       if check_possible(grid, grid_x, grid_y) do
-          # Replace "red" with the desired color
           Map.put(grid, {grid_x, grid_y}, current_player)
       else
         grid
@@ -117,10 +116,6 @@ end
       true -> false
     end
   end
-
-
-
-
 
   defp win(grid, {x, y}, color) do
     check_horizontal(grid, {x, y}, color) ||
